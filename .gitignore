@@ -1,0 +1,29 @@
+# Runtime output
+Logs/
+Reports/
+*.log
+
+# Real environment configuration
+Config/settings.psd1
+Config/*.secret.psd1
+
+# Real CSV / data exports
+Samples/*.private.csv
+Input/
+Output/
+
+# Credentials / certificates / environment files
+*.pfx
+*.p12
+*.pem
+*.key
+.env
+.env.*
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+
+# PowerShell temp files
+*.tmp
+*.bak
