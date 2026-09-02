@@ -4,9 +4,11 @@ function Export-StudentProvisioningReport {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory)]
+        [AllowEmptyCollection()]
         [array]$Results,
 
         [Parameter(Mandatory)]
+        [ValidateNotNullOrEmpty()]
         [string]$Path
     )
 
@@ -17,7 +19,7 @@ function Export-StudentProvisioningReport {
     }
 
     $Results | Export-Csv -Path $Path -NoTypeInformation
-    Write-Host "Report written to: $Path"
+    Write-Verbose "Report written to: $Path"
 }
 
 Export-ModuleMember -Function Export-StudentProvisioningReport
